@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "aia-utils"
-version = "0.1.0"
+name = "aia_utils"
+version = "0.1.6"
 description = ""
 authors = ["Edgar Sánchez <edgar.sanchez@mercadolibre.cl>"]
-packages = [{include = "src"}]
+packages = [{include = "aia_utils"}]
 
 [tool.pytest.ini_options]
-pythonpath = "src"
+pythonpath = "aia_utils"
 
 [tool.poetry.dependencies]
 python = "^3.11"
