@@ -26,6 +26,13 @@ poetry add ../aia-utils/
 aia-utils = {path = "../my/path", develop = true}
 ```
 
+### Publish
+
+```python
+poetry build 
+poetry publish
+```
+
 ### Docker
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
