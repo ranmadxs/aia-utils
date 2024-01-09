@@ -28,7 +28,7 @@ aia-utils = {path = "../my/path", develop = true}
 
 ### Publish
 
-```python
+```python {"id":"01HKNX07Y6Y05A7PQ1W95AGV8K"}
 poetry build 
 poetry publish
 ```
@@ -37,7 +37,7 @@ poetry publish
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=aia-utils_0.1.6
+export AIA_TAG_UTILS=aia-utils_0.1.7
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
