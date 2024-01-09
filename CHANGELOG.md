@@ -6,6 +6,9 @@ runme:
 
 # RELEASE
 
+[0.1.7] 08-ene-2023
+- Feature: html2img
+
 [0.1.6] First Version 28-dic-2023
 - Feature: aia msg repo
 - Feature: aia semantic repo
