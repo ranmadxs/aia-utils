@@ -1,5 +1,5 @@
 from html2image import Html2Image
-
+from PIL import Image
 from aia_utils.logs_cfg import config_logger
 import logging
 config_logger()
@@ -16,5 +16,6 @@ class ImageUtils:
     def html2img(self, name, html, css, size: tuple=(1100, 1400)):
         logger.info('html2img')
         self.hti.screenshot(html_str=html, css_str=css, save_as=name, size=size)
-        return True
+        im = Image.open(f"{self.output_path}/{name}")
+        return im
     

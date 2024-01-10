@@ -33,7 +33,10 @@ def test_html2img():
     css_file.close()
 
     # screenshot an HTML string (css is optional)
-    hti.html2img(name='page3.png', html=data, css=css, size=(1100, 1200))
+    image = hti.html2img(name='page3.png', html=data, css=css, size=(1100, 1200))
+    logger.debug(f"width: {image.width} height: {image.height}")
+    #image.show()
+    assert(image.width == 2200 and image.height == 2400)
     #hti.screenshot(html_str=data, css_str=css, save_as='page3.png', size=(1100, 1400))
 
     #hti.screenshot(url='https://wahapedia.ru/wh40k10ed/factions/space-marines/Tactical-Squad#google_vignette', 

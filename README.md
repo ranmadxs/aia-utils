@@ -37,7 +37,7 @@ poetry publish
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=aia-utils_0.1.7
+export AIA_TAG_UTILS=aia-utils_0.1.8
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
