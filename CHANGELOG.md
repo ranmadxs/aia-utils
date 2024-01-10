@@ -6,6 +6,9 @@ runme:
 
 # RELEASE
 
+[0.1.8] 10-ene-2023
+- Feature: html2img return img obj
+
 [0.1.7] 08-ene-2023
 - Feature: html2img
 
