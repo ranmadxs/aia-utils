@@ -71,7 +71,7 @@ class QueueConsumer:
                         self.logger.warning("[WARN] Not JS Valid")
         except Exception as e:
             self.logger.error('Error en recibir mensaje')
-            print(e)
+            self.logger.error(e)
 
 class QueueProducer:
     def __init__(self, topic, version = None, project_name = "unknown"):
