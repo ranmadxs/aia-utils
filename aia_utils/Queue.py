@@ -11,6 +11,7 @@ from datetime import datetime
 from aia_utils.logs_cfg import config_logger
 import logging
 load_dotenv()
+import traceback 
 
 class QueueConsumer:
     
@@ -37,7 +38,8 @@ class QueueConsumer:
         try:
             json.loads(jsonData)
         except ValueError as err:
-            print(err)
+            self.logger.error(err)
+            traceback.print_exc()
             return False
         return True
 
@@ -72,6 +74,7 @@ class QueueConsumer:
         except Exception as e:
             self.logger.error('Error en recibir mensaje')
             self.logger.error(e)
+            traceback.print_exc()
 
 class QueueProducer:
     def __init__(self, topic, version = None, project_name = "unknown"):

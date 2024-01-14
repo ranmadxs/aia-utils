@@ -17,6 +17,8 @@ git remote set-url origin git@github_ranmadxs:ranmadxs/aia-utils.git
 
 poetry add ../aia-utils/
 
+poetry run pip install -U aia-utils==0.x.x
+
 ```
 
 ### Result
