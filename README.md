@@ -1,7 +1,7 @@
 ---
 runme:
   id: 01HJV60F4EW988YE9KMJFSTDTY
-  version: v2.0
+  version: v2.2
 ---
 
 # aia-utils
@@ -45,7 +45,7 @@ git push --tags
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=aia-utils_0.1.9
+export AIA_TAG_UTILS=aia-utils_0.1.10
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
