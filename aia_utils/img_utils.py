@@ -2,8 +2,10 @@ from html2image import Html2Image
 from PIL import Image
 from aia_utils.logs_cfg import config_logger
 import logging
+import io
 config_logger()
 logger = logging.getLogger(__name__)
+import base64
 
 class ImageUtils:
 
@@ -19,3 +21,10 @@ class ImageUtils:
         im = Image.open(f"{self.output_path}/{name}")
         return im
     
+    def img2bytesAndStr(self, img_snapshot, format='PNG') -> bytes:
+        image_bytes = io.BytesIO()
+        logger.debug(type(img_snapshot))
+        img_snapshot.save(image_bytes, format=format)
+        img_bytes = image_bytes.getvalue()
+        img_str = base64.b64encode(img_bytes)
+        return img_bytes, img_str
