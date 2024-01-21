@@ -11,7 +11,9 @@ from datetime import datetime
 from aia_utils.logs_cfg import config_logger
 import logging
 load_dotenv()
-import traceback 
+import traceback
+import pkg_resources
+__version__ = pkg_resources.get_distribution('aia-utils').version
 
 class QueueConsumer:
     
@@ -43,8 +45,8 @@ class QueueConsumer:
             return False
         return True
 
-    def listen(self, callback_queue = None):
-        self.logger.info('Listener Queue Ready')
+    def listen(self, callback_queue = None, validate_JSON = True):
+        self.logger.info(f"Listener Queue Ready v{__version__}")
         try:
             while True:
                 msg = self.consumer.poll(timeout=1.0)
@@ -60,17 +62,22 @@ class QueueConsumer:
                         # Error
                         raise KafkaException(msg.error())
                 else:
-                    # Proper message
-                    #sys.stderr.write('%% %s [%d] at offset %d with key %s:\n' %
-                    #                (msg.topic(), msg.partition(), msg.offset(),
-                    #                str(msg.key())))
-                    msgValue = msg.value().decode('utf-8').replace("'", '"')
-                    self.logger.debug(msgValue)
-                    if self.validateJSON(msgValue):
-                        res = json.loads(msgValue)
-                        callback_queue(res)
+                    if validate_JSON:
+                        self.logger.debug("Validating JSON")
+                        # Proper message
+                        #sys.stderr.write('%% %s [%d] at offset %d with key %s:\n' %
+                        #                (msg.topic(), msg.partition(), msg.offset(),
+                        #                str(msg.key())))
+                        msgValue = msg.value().decode('utf-8').replace("'", '"')
+                        self.logger.debug(msgValue)
+                        if self.validateJSON(msgValue):
+                            res = json.loads(msgValue)
+                            callback_queue(res)
+                        else:
+                            self.logger.warning("[WARN] Not JS Valid")
                     else:
-                        self.logger.warning("[WARN] Not JS Valid")
+                        callback_queue(msg.value())
+                    
         except Exception as e:
             self.logger.error('Error en recibir mensaje')
             self.logger.error(e)
@@ -79,8 +86,7 @@ class QueueConsumer:
 class QueueProducer:
     def __init__(self, topic, version = None, project_name = "unknown"):
         config_logger()
-        self.logger = logging.getLogger(__name__)
-        self.logger.info("Topic Producer = " + topic)        
+        self.logger = logging.getLogger(__name__)  
         self.version = version
         self.topic = topic
         self.conf = {
@@ -92,6 +98,7 @@ class QueueProducer:
         }
         self.project_name = project_name
         self.producer = Producer(**self.conf)
+        self.logger.info(f"Topic [{topic}] QueProducer v{__version__}")      
 
     def msgBuilder(self, bodyObject):
         now = datetime.now()
@@ -124,10 +131,13 @@ class QueueProducer:
         objStr = self.msgBuilder(bodyObject)
         self.send(objStr, callback_queue)
 
-    def send(self, msg, callback_queue = None):
-        msg_str = json.dumps(msg, default=self.serialize_datetime)
+    def produce(self, msg_str, callback_queue = None):
         self.producer.produce(self.topic, msg_str, callback=callback_queue)
         self.producer.poll(0)
+
+    def send(self, msg, callback_queue = None):
+        msg_str = json.dumps(msg, default=self.serialize_datetime)
+        self.produce(msg_str, callback_queue)
     
     def flush(self):
         self.producer.flush()
