@@ -3,8 +3,11 @@ runme:
   id: 01HJQ7JXMD6NADWWC23SR9W42S
   version: v2.2
 ---
-
 # RELEASE
+
+[0.1.11] 21-ene-2023
+
+- Feature: Add queue listener flag validateJson default True
 
 [0.1.8] 10-ene-2023
 
