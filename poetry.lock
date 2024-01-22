@@ -231,6 +231,14 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "urllib3"
 version = "2.1.0"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -259,7 +267,7 @@ test = ["websockets"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "b76c9ae523a282b4eaa18228aec41211a6b191daecb0f75709567a20b7dfe740"
+content-hash = "6aa4a5a5533aaab11b40cf9cbbfb7df4a47501fc9901d104ef1a20f04743bb90"
 
 [metadata.files]
 certifi = []
@@ -281,5 +289,6 @@ pytest-dotenv = []
 python-dotenv = []
 pyyaml = []
 requests = []
+tomli = []
 urllib3 = []
 websocket-client = []
