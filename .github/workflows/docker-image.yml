@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image Push
 
 on:
   push:
@@ -11,6 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - uses: actions/checkout@v3    
+    - name: Build & Push to Docker Hub
+      # You may pin to the exact commit or the version.
+      uses: opspresso/action-docker@master
+      with:
+          args: --docker
+      env:
+          USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          TAG_NAME: "v0.1.14"
+          BUILDX: "true"
+          IMAGE_NAME: "keitarodxs/aia-utils"
+          
