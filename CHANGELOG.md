@@ -3,23 +3,28 @@ runme:
   id: 01HJQ7JXMD6NADWWC23SR9W42S
   version: v2.2
 ---
+
 # RELEASE
 
-```bash
-[0.1.12] 22-ene-2023
+```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.1.13] 23-ene-2024
+
+- Githubactions -> add workflow to publish to pypi
+
+[0.1.12] 22-ene-2024
 
 - Feature: Add getVersion(file_toml)
 
-[0.1.11] 21-ene-2023
+[0.1.11] 21-ene-2024
 
 - Feature: Add queue listener flag validateJson default True
 
-[0.1.8] 10-ene-2023
+[0.1.8] 10-ene-2024
 
 - Feature: html2img return img obj
 - Fix: add log.error in Queue
 
-[0.1.7] 08-ene-2023
+[0.1.7] 08-ene-2024
 
 - Feature: html2img
 
