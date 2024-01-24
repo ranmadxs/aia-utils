@@ -9,7 +9,8 @@ runme:
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
 [0.1.14] 24-ene-2024
 
-- Add new dockerhub image name: 
+- Change docker hub repo to keitarodxs/aia-utils:<tag>
+- Githubactions -> Add new dockerhub push
 
 [0.1.13] 23-ene-2024
 
