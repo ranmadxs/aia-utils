@@ -13,7 +13,7 @@ git remote set-url origin git@github_ranmadxs:ranmadxs/aia-utils.git
 
 ## Use local dev
 
-```console {"id":"01HJV60F4EW988YE9KMGH6GQ66"}
+```sh {"id":"01HJV60F4EW988YE9KMGH6GQ66"}
 
 poetry add ../aia-utils/
 
