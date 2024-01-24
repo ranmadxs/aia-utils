@@ -27,7 +27,7 @@ jobs:
       env:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          TAG_NAME: "v0.1.14"
+          TAG_NAME: $RELEASE_VERSION
           BUILDX: "true"
           IMAGE_NAME: "keitarodxs/aia-utils"
           
