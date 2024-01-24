@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.1.14] 24-ene-2024
+
+- Add new dockerhub image name: 
+
 [0.1.13] 23-ene-2024
 
 - Githubactions -> add workflow to publish to pypi

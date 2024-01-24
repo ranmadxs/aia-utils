@@ -45,13 +45,13 @@ git push --tags
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=aia-utils_0.1.13
+export AIA_TAG_UTILS=0.1.14
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
 #build
-docker build . --platform linux/arm64/v8 -t keitarodxs/aia:$AIA_TAG_UTILS
+docker build . --platform linux/arm64/v8 -t keitarodxs/aia-utils:$AIA_TAG_UTILS
 
 #push
-docker push keitarodxs/aia:$AIA_TAG_UTILS
+docker push keitarodxs/aia-utils:$AIA_TAG_UTILS
 ```
