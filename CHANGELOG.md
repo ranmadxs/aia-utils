@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.1.15] 28-ene-2024
+
+- Dockerfile: Add poetry, vim, ping
+
 [0.1.14] 24-ene-2024
 
 - Change docker hub repo to keitarodxs/aia-utils:<tag>
