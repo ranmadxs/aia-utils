@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.1.16] 29-ene-2024
+
+- Feature: generate_manifest
+
 [0.1.15] 28-ene-2024
 
 - Dockerfile: Add poetry, vim, ping
