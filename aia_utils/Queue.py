@@ -12,8 +12,10 @@ from aia_utils.logs_cfg import config_logger
 import logging
 load_dotenv()
 import traceback
-import pkg_resources
-__version__ = pkg_resources.get_distribution('aia-utils').version
+#import pkg_resources
+#__version__ = pkg_resources.get_distribution('aia-utils').version
+from aia_utils.toml_utils import aia_utils_version
+__version__ = aia_utils_version()
 
 class QueueConsumer:
     

@@ -102,6 +102,17 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "paho-mqtt"
+version = "2.1.0"
+description = "MQTT version 5.0/3.1.1 client class"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+proxy = ["pysocks"]
+
+[[package]]
 name = "pillow"
 version = "10.2.0"
 description = "Python Imaging Library (Fork)"
@@ -267,7 +278,7 @@ test = ["websockets"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "6aa4a5a5533aaab11b40cf9cbbfb7df4a47501fc9901d104ef1a20f04743bb90"
+content-hash = "9056d0d1dc8d5c02b4fc83759d84d8a953eb52113b599291e6c93c32e212c852"
 
 [metadata.files]
 certifi = []
@@ -280,6 +291,7 @@ html2image = []
 idna = []
 iniconfig = []
 packaging = []
+paho-mqtt = []
 pillow = []
 pluggy = []
 pymongo = []

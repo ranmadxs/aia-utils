@@ -1,12 +1,17 @@
 ---
 runme:
   id: 01HJQ7JXMD6NADWWC23SR9W42S
-  version: v2.2
+  version: v3
 ---
 
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.1.17] 31-jul-2024
+
+- Update: get_aia_version
+- Feature: Add mqtt client
+
 [0.1.16] 29-ene-2024
 
 - Feature: generate_manifest
