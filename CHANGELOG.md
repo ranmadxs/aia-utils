@@ -7,7 +7,7 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
-[0.1.17] 31-jul-2024
+[0.2.1] 31-jul-2024
 
 - Update: get_aia_version
 - Feature: Add mqtt client

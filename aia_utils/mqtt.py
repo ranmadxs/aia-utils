@@ -32,4 +32,4 @@ class MqttClient:
         #if msg_info.is_published() == False:
         #    print('Message is not yet published.')
         msg_info.wait_for_publish()
-        print(f"Message sent: {message}")
+        self.logger.debug(f"Message sent: {message}")
