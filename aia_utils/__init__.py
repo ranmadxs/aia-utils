@@ -5,6 +5,7 @@ from aia_utils.repositories.aia_msg_repo import AIAMessageRepository
 from aia_utils.repositories.aia_semantic_repo import AIASemanticGraph
 from aia_utils.toml_utils import getVersion, aia_utils_version
 from aia_utils.mqtt import MqttClient
+from aia_utils.http.aia_http import AiaHttpClient
 
 __version__ = aia_utils_version()
 
@@ -14,5 +15,6 @@ __all__ = ["getVersion",
            "QueueProducer", 
            "config_logger", 
            "AIAMessageRepository", 
-           "AIASemanticGraph", 
+           "AIASemanticGraph",
+           "AiaHttpClient",
            "MqttClient"]

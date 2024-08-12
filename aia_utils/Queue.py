@@ -19,14 +19,14 @@ __version__ = aia_utils_version()
 
 class QueueConsumer:
     
-    def __init__(self, topic):
+    def __init__(self, topic, clientId = "aiaClient"):
         config_logger()
         self.logger = logging.getLogger(__name__)
         self.topic = topic
         self.conf = {
-            'client.id': 'python1Client',            
+            'client.id': clientId,            
             'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
-            'group.id': "%s-consumer2" % (os.environ['CLOUDKARAFKA_USERNAME']),            
+            'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),            
             'session.timeout.ms': 6000,
             'default.topic.config': {'auto.offset.reset': 'smallest'},
             'security.protocol': 'SASL_SSL',
