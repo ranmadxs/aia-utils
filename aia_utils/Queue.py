@@ -25,7 +25,9 @@ class QueueConsumer:
         self.topic = topic
         if "CLOUDKAFKA_ANONIMOUS_ACCESS" in os.environ and os.environ['CLOUDKAFKA_ANONIMOUS_ACCESS'] == 'True':
             self.conf = {
-                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS']
+                'client.id': clientId,
+                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
+                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic)
             }
         else:
             self.conf = {
