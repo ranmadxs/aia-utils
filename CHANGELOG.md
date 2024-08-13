@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.3.3] 13-ago-2024
+
+- 🔥 Hotfix add config 'auto.offset.reset': 'earliest' to queue Consumer
+
 [0.3.2] 13-ago-2024
 
 - 🔥 Hotfix config ConsumerKafka, add group clientId to NO auth

@@ -27,13 +27,15 @@ class QueueConsumer:
             self.conf = {
                 'client.id': clientId,
                 'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
-                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic)
+                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),
+                'auto.offset.reset': 'earliest'
             }
         else:
             self.conf = {
                 'client.id': clientId,            
                 'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
-                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),            
+                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),
+                'auto.offset.reset': 'earliest',        
                 'session.timeout.ms': 6000,
                 'default.topic.config': {'auto.offset.reset': 'smallest'},
                 'security.protocol': 'SASL_SSL',
