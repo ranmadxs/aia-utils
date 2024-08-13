@@ -23,17 +23,22 @@ class QueueConsumer:
         config_logger()
         self.logger = logging.getLogger(__name__)
         self.topic = topic
-        self.conf = {
-            'client.id': clientId,            
-            'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
-            'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),            
-            'session.timeout.ms': 6000,
-            'default.topic.config': {'auto.offset.reset': 'smallest'},
-            'security.protocol': 'SASL_SSL',
-            'sasl.mechanisms': 'SCRAM-SHA-512',
-            'sasl.username': os.environ['CLOUDKARAFKA_USERNAME'],
-            'sasl.password': os.environ['CLOUDKARAFKA_PASSWORD']            
-        }
+        if "CLOUDKAFKA_ANONIMOUS_ACCESS" in os.environ and os.environ['CLOUDKAFKA_ANONIMOUS_ACCESS'] == 'True':
+            self.conf = {
+                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS']
+            }
+        else:
+            self.conf = {
+                'client.id': clientId,            
+                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
+                'group.id': "%s-consumer-%s" % (os.environ['CLOUDKARAFKA_USERNAME'], topic),            
+                'session.timeout.ms': 6000,
+                'default.topic.config': {'auto.offset.reset': 'smallest'},
+                'security.protocol': 'SASL_SSL',
+                'sasl.mechanisms': 'SCRAM-SHA-512',
+                'sasl.username': os.environ['CLOUDKARAFKA_USERNAME'],
+                'sasl.password': os.environ['CLOUDKARAFKA_PASSWORD']            
+            }
         self.consumer = Consumer(**self.conf)
         self.logger.info("Topic Consumer = " + topic)
         self.consumer.subscribe([topic])
@@ -91,13 +96,18 @@ class QueueProducer:
         self.logger = logging.getLogger(__name__)  
         self.version = version
         self.topic = topic
-        self.conf = {
-            'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
-            'security.protocol': 'SASL_SSL',
-            'sasl.mechanisms': 'SCRAM-SHA-512',
-            'sasl.username': os.environ['CLOUDKARAFKA_USERNAME'],
-            'sasl.password': os.environ['CLOUDKARAFKA_PASSWORD']            
-        }
+        if "CLOUDKAFKA_ANONIMOUS_ACCESS" in os.environ and os.environ['CLOUDKAFKA_ANONIMOUS_ACCESS'] == 'True':
+            self.conf = {
+                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS']
+            }
+        else:
+            self.conf = {
+                'bootstrap.servers': os.environ['CLOUDKARAFKA_BROKERS'],
+                'security.protocol': 'SASL_SSL',
+                'sasl.mechanisms': 'SCRAM-SHA-512',
+                'sasl.username': os.environ['CLOUDKARAFKA_USERNAME'],
+                'sasl.password': os.environ['CLOUDKARAFKA_PASSWORD']            
+            }
         self.project_name = project_name
         self.producer = Producer(**self.conf)
         self.logger.info(f"Topic [{topic}] QueProducer v{__version__}")      

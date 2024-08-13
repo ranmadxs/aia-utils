@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.3.1] 13-ago-2024
+
+- ✨🔧 Add support Queue no auth using env var CLOUDKAFKA_ANONIMOUS_ACCESS=True
+
 [0.3.0] 12-ago-2024
 
 - ✨ Feature: Add clientId in queue->KafkaClient

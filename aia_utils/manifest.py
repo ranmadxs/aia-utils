@@ -1,7 +1,7 @@
 import yaml
 from aia_utils.toml_utils import get_project_meta
-import pkg_resources
-__version__ = pkg_resources.get_distribution('aia-utils').version
+from aia_utils.toml_utils import getVersion, aia_utils_version
+__version__ = aia_utils_version()
 
 def generate_manifest(toml_file: str = 'pyproject.toml', custom_properties: dict = {}):
     
