@@ -11,6 +11,8 @@ currentPath = os.getcwd()
 logger = logging.getLogger(__name__)
 import pytest
 from confluent_kafka import Producer
+TEST_MESSAGE = "Test message from pytest"
+from mqtt import MqttProducer
 
 #poetry run pytest tests/test_queueProducer.py::test_produce -s
 @pytest.mark.skip(reason="esta pensado para correr en local")
@@ -18,7 +20,7 @@ def test_produce():
     topicProducer = os.environ['TEST_CLOUDKAFKA_TOPIC_PRODUCER']
     logger.info("Test Produce queue " + topicProducer)
     queueProducer = QueueProducer("test001", "test001", "aia-utils")
-    queueProducer.send({"cmd": "test"})
+    queueProducer.send(TEST_MESSAGE)
     queueProducer.flush()
 
 def delivery_report(err, msg):
@@ -37,3 +39,11 @@ def test_produce2():
     p.produce('test001', 'again aiaf33333', callback=delivery_report)
     p.flush()
 
+#poetry run pytest tests/test_mqtt.py::test_produce -s
+#@pytest.mark.skip(reason="esta pensado para correr en local")
+def test_produce():
+    topic = os.environ['MQTT_TOPIC_PRODUCER']
+    logger.info("Test Produce queue " + topic)
+    client_id = "aia-utils-test-001"
+    producer = MqttProducer(topic, client_id)
+    producer.send_message(TEST_MESSAGE)

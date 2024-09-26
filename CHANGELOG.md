@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.3.4] 25-sep-2024
+
+- ✨ Feature: Add mqtt consumer topic
+
 [0.3.3] 13-ago-2024
 
 - 🔥 Hotfix add config 'auto.offset.reset': 'earliest' to queue Consumer
