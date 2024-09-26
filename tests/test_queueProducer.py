@@ -1,5 +1,5 @@
 #https://api.cloudkarafka.com/
-from Queue import QueueProducer
+from Queue import QueueProducer, QueueConsumer
 import os
 from dotenv import load_dotenv
 import logging
@@ -30,6 +30,13 @@ def delivery_report(err, msg):
         print('Message delivery failed: {}'.format(err))
     else:
         print('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
+
+#poetry run pytest tests/test_queueProducer.py::test_consume -s
+def test_consume():
+    topicConsumer = os.environ['CLOUDKAFKA_TOPIC_CONSUMER']
+    logger.info("Test Consume queue " + topicConsumer)
+    queueConsumer = QueueConsumer(topicConsumer, "aia-utils")
+    queueConsumer.listen()
 
 #poetry run pytest tests/test_queueProducer.py::test_produce2 -s
 @pytest.mark.skip(reason="esta pensado para correr en local")

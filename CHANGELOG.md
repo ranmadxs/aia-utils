@@ -7,6 +7,10 @@ runme:
 # RELEASE
 
 ```bash {"id":"01HMWTE8TB8HPD5710FYSDYTDZ"}
+[0.3.5] 26-sep-2024
+
+- 🔄 Updating confluent-kafka (2.3.0 -> 2.5.3)
+
 [0.3.4] 25-sep-2024
 
 - ✨ Feature: Add mqtt consumer topic

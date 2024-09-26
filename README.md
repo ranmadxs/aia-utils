@@ -17,7 +17,7 @@ git remote set-url origin git@github_ranmadxs:ranmadxs/aia-utils.git
 
 poetry add ../aia-utils/
 
-poetry run pip install -U aia-utils==0.x.x
+poetry run pip install -U aia-utils==$AIA_TAG_UTILS
 
 ```
 
@@ -45,7 +45,7 @@ git push --tags
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=0.3.4
+export AIA_TAG_UTILS=0.3.5
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
