@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 import logging
-from mqtt import MqttProducer, MqttConsumer
-from logs_cfg import config_logger
+from aia_utils.mqtt import MqttProducer, MqttConsumer
+from aia_utils.logs_cfg import config_logger
 config_logger()
 logger = logging.getLogger(__name__)
 

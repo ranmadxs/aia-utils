@@ -1,5 +1,5 @@
 import logging
-from logs_cfg import config_logger
+from aia_utils.logs_cfg import config_logger
 config_logger()
 logger = logging.getLogger(__name__)
 from aia_utils.toml_utils import getVersion, aia_utils_version

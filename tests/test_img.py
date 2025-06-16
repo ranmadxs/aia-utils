@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import logging
 load_dotenv()
 import json
-from logs_cfg import config_logger
+from aia_utils.logs_cfg import config_logger
 config_logger()
 currentPath = os.getcwd()
 logger = logging.getLogger(__name__)
