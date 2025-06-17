@@ -26,7 +26,11 @@ handlers:
         backupCount: 5
         encoding: utf8
  
+loggers:
+    pymongo:
+        level: ERROR
+        propagate: no
+
 root:
- 
     level: DEBUG
     handlers: [console, file_handler]

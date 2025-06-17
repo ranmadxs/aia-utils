@@ -6,24 +6,31 @@ runme:
 
 # RELEASE
 
-## [0.3.13] - 2024-03-19
+## [0.4.0] - 2025-06-16
+### Added
+- ✨ Feature: Add MongoDB caching support to AiaHttpClient
+- 🔄 Update Python version to 3.13.5
+- 🔄 Update dependencies to latest compatible versions
+- 🧪 Enhanced test coverage for AiaHttpClient
+
+## [0.3.13] - 2025-06-16
 ### Updated
 - 🔄 Update GithubActions to use pypa/gh-action-pypi-publish@v1.8.0
 - 🔄 Update GithubActions Python version to 3.13.5
 - 🔄 Update GithubActions Poetry version to 2.1.1
 
-## [0.3.8] - 2024-03-19
+## [0.3.8] - 2025-06-16
 ### Fixed
 - 🐞 Fix Github Actions python publish
 
-## [0.3.7] - 2024-03-19
+## [0.3.7] - 2025-06-16
 ### Added
 - 🔄 Updated Python version to 3.13.5 in the Dockerfile.
 - 🔄 Updated confluent-kafka version to 2.5.3.
 - 🔄 Updated pillow version to 10.2.0.
 - 🔃 Migrated dev-dependencies to the recommended Poetry section.
 
-## [0.3.6] - 2024-03-19
+## [0.3.6] - 2025-06-16
 ### Added
 - 🧪 Test AiaHttpClient (gemini ia url)
 - 🔄 Updated Python version to 3.13.

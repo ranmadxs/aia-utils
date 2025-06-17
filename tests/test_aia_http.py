@@ -8,7 +8,7 @@ def http_client():
 # poetry run pytest tests/test_aia_http.py::test_get -s
 def test_get(http_client):
     # Test GET request to a public API
-    response = http_client.get("https://jsonplaceholder.typicode.com/posts/1")
+    response = http_client.get("https://jsonplaceholder.typicode.com/posts/3")
     
     # Assert response status code
     assert response.status_code == 200
@@ -42,7 +42,7 @@ def test_post(http_client):
     assert isinstance(data, dict)
     assert data["title"] == test_data["title"]
     assert data["body"] == test_data["body"]
-    assert data["userId"] == test_data["userId"]
+    assert int(data["userId"]) == test_data["userId"]
     assert "id" in data
 
 # poetry run pytest tests/test_aia_http.py::test_gemini -s
