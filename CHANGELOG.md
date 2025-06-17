@@ -6,7 +6,7 @@ runme:
 
 # RELEASE
 
-## [0.3.11] - 2024-03-19
+## [0.3.12] - 2024-03-19
 ### Updated
 - 🔄 Update GithubActions to use pypa/gh-action-pypi-publish@v1.8.0
 - 🔄 Update GithubActions Python version to 3.13.5
