@@ -6,9 +6,9 @@ runme:
 
 # RELEASE
 
-## [0.3.9] - 2024-03-19
+## [0.3.10] - 2024-03-19
 ### Updated
-- 🔄 Update GithubActions to use poetry-publish@v2.1
+- 🔄 Update GithubActions to use pypa/gh-action-pypi-publish@v1.8.0
 - 🔄 Update GithubActions Python version to 3.13.5
 - 🔄 Update GithubActions Poetry version to 2.1.1
 
