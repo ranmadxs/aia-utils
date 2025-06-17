@@ -5,6 +5,13 @@ runme:
 ---
 
 # RELEASE
+
+## [0.3.9] - 2024-03-19
+### Updated
+- 🔄 Update GithubActions to use poetry-publish@v2.1
+- 🔄 Update GithubActions Python version to 3.13.5
+- 🔄 Update GithubActions Poetry version to 2.1.1
+
 ## [0.3.8] - 2024-03-19
 ### Fixed
 - 🐞 Fix Github Actions python publish
@@ -97,4 +104,5 @@ runme:
 - ✨ logger Feature
 - ✨ Queue Kafka Producer-Consumer
 - ✨ Add AIA Model
+
 

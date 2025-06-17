@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aia_utils"
-version = "0.3.8"
+version = "0.3.9"
 description = ""
 authors = ["Edgar Sánchez <edgar.sanchez@mercadolibre.cl>"]
 packages = [{include = "aia_utils"}]
