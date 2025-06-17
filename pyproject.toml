@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aia_utils"
-version = "0.4.0"
+version = "0.4.1"
 description = ""
 authors = ["Edgar Sánchez <edgar.sanchez@mercadolibre.cl>"]
 packages = [{include = "aia_utils"}]
@@ -9,7 +9,7 @@ packages = [{include = "aia_utils"}]
 pythonpath = "aia_utils"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.11"
 confluent-kafka = "^2.5.3"
 coverage = "^7.3.2"
 PyYAML = "^6.0.1"

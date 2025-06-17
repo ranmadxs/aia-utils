@@ -55,7 +55,7 @@ def test_gemini(http_client):
             {
                 "parts": [
                     {
-                        "text": "me puedes dar las estadísticas base para  https://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-Titus. "
+                        "text": "me puedes dar las estadísticas de las armas que usa  https://wahapedia.ru/wh40k10ed/factions/space-marines/Lieutenant-Titus. "
                     }
                 ]
             }

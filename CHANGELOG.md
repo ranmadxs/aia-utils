@@ -6,6 +6,10 @@ runme:
 
 # RELEASE
 
+## [0.4.1] - 2024-06-17
+### Added
+- ✅ This version now supports Python 3.11
+
 ## [0.4.0] - 2025-06-16
 ### Added
 - ✨ Feature: Add MongoDB caching support to AiaHttpClient
