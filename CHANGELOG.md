@@ -5,6 +5,9 @@ runme:
 ---
 
 # RELEASE
+## [0.3.8] - 2024-03-19
+### Fixed
+- 🐞 Fix Github Actions python publish
 
 ## [0.3.7] - 2024-03-19
 ### Added
@@ -94,3 +97,4 @@ runme:
 - ✨ logger Feature
 - ✨ Queue Kafka Producer-Consumer
 - ✨ Add AIA Model
+
