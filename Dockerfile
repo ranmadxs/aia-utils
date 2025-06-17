@@ -1,4 +1,4 @@
-FROM python:3.11.7
+FROM python:3.13.5
 RUN echo "aia-utils image"
 RUN apt-get update && apt-get -y install
 RUN apt-get install iputils-ping -y
