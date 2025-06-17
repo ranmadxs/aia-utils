@@ -45,7 +45,7 @@ git push --tags
 
 ```python {"id":"01HJV66J6EV6K8ECD6KNMET9KM"}
 #set var entorno
-export AIA_TAG_UTILS=0.4.4
+export AIA_TAG_UTILS=0.4.5
 ```
 
 ```sh {"id":"01HJV64NSH238T2X9KXSA1A4FW"}
