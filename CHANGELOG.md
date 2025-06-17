@@ -6,7 +6,7 @@ runme:
 
 # RELEASE
 
-## [0.4.1] - 2024-06-17
+## [0.4.2] - 2024-06-17
 ### Added
 - ✅ This version now supports Python 3.11
 
