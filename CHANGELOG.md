@@ -6,6 +6,11 @@ runme:
 
 # RELEASE
 
+## [0.4.6] - 2024-06-18
+### Added
+- ✨ Feature: Add TTL (Time To Live) support for HTTP cache
+- 🔧 New environment variable AIA_HTTP_CACHE_TTL to configure cache expiration time
+
 ## [0.4.5] - 2024-06-17
 ### Added
 - ✅ Build version 0.4.3
