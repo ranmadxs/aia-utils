@@ -122,4 +122,10 @@ runme:
 - ✨ Queue Kafka Producer-Consumer
 - ✨ Add AIA Model
 
+## [0.4.7] - 2024-06-18
+### Added
+- ✅ Add tests for HTTP cache with TTL
+- 🐛 Fix datetime handling in cache expiration
+- 🚫 Skip OpenAI test by default
+
 

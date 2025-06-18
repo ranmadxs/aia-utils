@@ -35,9 +35,12 @@ class AiaHttpClient:
             return False
         
         cache_time = cached_response['timestamp']
+        # Asegurar que ambas fechas tengan zona horaria
+        if cache_time.tzinfo is None:
+            cache_time = cache_time.replace(tzinfo=timezone.utc)
         current_time = datetime.now(timezone.utc)
-        age = current_time - cache_time
         
+        age = current_time - cache_time
         return age.total_seconds() < self.cache_ttl
 
     def _get_from_cache(self, cache_key):
