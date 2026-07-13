@@ -1,17 +1,8 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # aia-utils — IMAGEN BASE (Dockerfile)
 #
-# ⚠️  BREAKING CHANGE (nivel Dockerfile): esta imagen deja de ser la imagen de
-# runtime de la librería aia-utils y pasa a ser la IMAGEN BASE reutilizable para
-# los proyectos del ecosistema aia (ej. aia-mcp).
-#
-# Cambios respecto a versiones <1.0.0 del Dockerfile:
-#   - Base: python:3.11 (con ping/vim)  ->  python:3.13-slim (mínima)
-#   - pip install poetry                ->  uv (instalador 10-100x más rápido)
-#   - Se añaden git, curl, ca-certificates (requeridos por los proyectos hijos)
-#   - Se añade Node.js 20 + drawio-mcp-server (requerido por aia-mcp)
-#   - Ya NO instala el paquete aia-utils ni sus deps: eso lo hace cada proyecto
-#     hijo en su propio Dockerfile usando `FROM keitarodxs/aia-utils-base:<tag>`.
+# Imagen base reutilizable para los proyectos del ecosistema aia (ej. aia-mcp).
+# Ver CHANGELOG.md (entrada 1.0.0) para el detalle de los cambios (breaking).
 #
 # Uso en un proyecto hijo (ej. aia-mcp):
 #   FROM keitarodxs/aia-utils-base:1.0.0
