@@ -6,6 +6,23 @@ runme:
 
 # RELEASE
 
+## [1.0.0] - 2026-07-13
+### ⚠️ BREAKING CHANGE (nivel Dockerfile)
+- La imagen Docker deja de ser la imagen de runtime de la librería `aia-utils` y
+  pasa a ser la **imagen base reutilizable** `keitarodxs/aia-utils-base` para los
+  proyectos del ecosistema aia (ej. aia-mcp).
+- **Base**: `python:3.11` (con `iputils-ping`/`vim`) → `python:3.13-slim` (mínima).
+- **Instalador**: `pip install poetry` → se añade `uv` (`uv pip install --system`,
+  10-100x más rápido). Poetry se mantiene solo para `poetry export`.
+- **Sistema**: se añaden `git`, `curl`, `ca-certificates`, `build-essential`, `gcc`
+  (requeridos por los proyectos hijo).
+- **Node**: se añade Node.js 20 + `drawio-mcp-server@2.2.0` (requerido por aia-mcp).
+- **No instala** el paquete `aia-utils` ni sus deps: cada proyecto hijo lo hace en
+  su propio `Dockerfile` con `FROM keitarodxs/aia-utils-base:<tag>`.
+- Workflow `docker-image.yml`: publica `keitarodxs/aia-utils-base` con `TAG_NAME`
+  del release y multi-arquitectura (`linux/amd64,linux/arm64`).
+- Se genera `poetry.lock` (faltaba en el repo).
+
 ## [0.4.6] - 2024-06-18
 ### Added
 - ✨ Feature: Add TTL (Time To Live) support for HTTP cache
