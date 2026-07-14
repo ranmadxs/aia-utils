@@ -3,6 +3,8 @@ name: Docker Image Publish
 on:
   pull_request:
   push:
+    branches:
+      - "main"
     tags:
       - "v*.*.*"
 
@@ -15,11 +17,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Set docker tag version
-      # En tag: usa la versión (ej. v1.0.0). En PR: usa el nombre de rama
-      # sanitizado (ej. feat-dockerfile-base-breaking) para poder construir sin tag.
+      # - Tag (vX.Y.Z): usa el nombre del tag tal cual.
+      # - Merge a main (push a main): usa la versión del pyproject.toml
+      #   (poetry version --short), ej. 1.0.0. Así al mezclar el PR se publica
+      #   la imagen release con el tag de la versión del paquete.
+      # - PR: usa el nombre de rama sanitizado (ej. feat-dockerfile-base-breaking)
+      #   para construir sin tag de release.
       run: |
         if [ "${{ github.ref_type }}" = "tag" ]; then
           echo "RELEASE_VERSION=${{ github.ref_name }}" >> "$GITHUB_ENV"
+        elif [ "${{ github.ref }}" = "refs/heads/main" ]; then
+          echo "RELEASE_VERSION=$(poetry version --short)" >> "$GITHUB_ENV"
         else
           echo "RELEASE_VERSION=$(echo '${{ github.head_ref || github.ref_name }}' | tr '/' '-')" >> "$GITHUB_ENV"
         fi
